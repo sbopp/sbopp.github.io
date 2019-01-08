@@ -7,9 +7,9 @@ body{
 }
 
 /*Hyperlink Colors: inherit parent properties, Black normally and green when clicked*/
-a { color: inherit; } 
+a { color: inherit; }
 
-a:hover { 
+a:hover {
   color: black;
 }
 
@@ -39,8 +39,8 @@ ul{
 
 /* Landing Page Section: Showcase */
 #showcase{
-  min-height:400px;
-  background:url('../img/showcase.jpg') no-repeat 0 -400px;
+  /*min-height:400px;*/
+  /*background:url('../img/showcase.jpg') no-repeat 0 -400px;*/
   text-align:center;
   color:#000000; /*Header Text Color*/
 }
