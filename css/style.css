@@ -39,7 +39,7 @@ ul{
 
 /* Landing Page Section: Showcase */
 #showcase{
-  /*min-height:400px;*/
+  min-height:0px;
   /*background:url('../img/showcase.jpg') no-repeat 0 -400px;*/
   text-align:center;
   color:#000000; /*Header Text Color*/
