@@ -50,6 +50,24 @@ a:active {
 }
 
 /* Landing Page Section: Showcase */
+#showcaseabout{
+  min-height:0%;
+  /*background:url('../img/showcase.jpg') no-repeat 0 -400px;*/
+  text-align:center;
+  color:#000000; /*Header Text Color*/
+}
+#showcaseabout h1{
+  margin-top:3%; /*Spacing between top of page and Name*/
+/*  font-size:55px; */
+  font-size:365%;
+  margin-bottom:0%; /*Spacing between name and top of title image*/
+}
+#showcaseabout p{
+  font-size:20px;
+}
+
+
+/* Landing Page Section: Showcase */
 #vis{
   min-height:0%;
   /*background:url('../img/showcase.jpg') no-repeat 0 -400px;*/
