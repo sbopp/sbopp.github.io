@@ -40,6 +40,35 @@ a:active {
 }
 
 /* Publications Section */
+#book{
+  min-height:0%;
+  margin-left: 5%;
+  text-align:left;
+  color:#000000;
+  font-size: 100%;
+}
+.book_title {
+  font-size: 125%;
+  font-weight:bold;
+  color:#000000;
+}
+.book_citation {
+  font-size: 100%;
+  font-style: italic;
+  color:#000000;
+}
+.book_authors {
+  font-size: 125%;
+  color:#000000;
+}
+.book_description {
+  font-size: 100%;
+  color:#000000;
+}
+
+
+
+/* Publications Section */
 #publications{
   min-height:0%;
   margin-left: 5%;
