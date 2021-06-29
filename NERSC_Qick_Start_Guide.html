@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Materials Science & Engineering">
+	  <meta name="keywords" content="Materials Science & Engineering, Ultramaterials, Plasmonics">
+  	<meta name="author" content="Steven Bopp">
+    <title>SBopp | Welcome</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Materials Science & Engineering">
+    	  <meta name="keywords" content="Materials Science & Engineering, Ultramaterials, Plasmonics">
+      	<meta name="author" content="Steven Bopp">
+        <title>SBopp | Welcome</title>
+        <link rel="stylesheet" href="./css/style.css">
+      </head>
+      <body>
+
+        <section id="showcase">
+          <div class="container">
+            <h1><a style="text-decoration:none" href="index.html">Assemble a Clean Room Toolkit</a></h1>
+          </div>
+        </section>
+
+        <section id="showcase">
+          <div class="container">
+            <p>NERSC (the National Energy Research Scientific Computing Center) is a powerful cluster for use on DoE projects. All sorts of codes are carefully curated on their platform and support by thier staff is excellent. However, a strong background in shell commands and scripting is generally recommended for ease of use on NERSC as well as other systems accessable with SSH. Herein is a short guide for accessing NERSC and running example calculations. It is assumed that you have a NERSC account and the Google (or equivlent) authenticator application set up.</p>
+
+            <p>NERSC can be accessed via the terminal with the following command: $ ssh -l uname -Y cori.nersc.gov </p>
+
+            <p>uname in this case will need to be replaced with your unique username. Run the command (assuming that you are connected to the internet) and you should be greeted with something similar to the following:</p>
+
+            <img src="/img/NERSC_SSH.png" alt="NERSC SSH Requesting Password" style="float:center;width:50%;height:50%;">
+
+            <p>Here you will need to enter your password followed without spaces by the unique, rotating 6-digit key that is supplied by your authenticator app, an example of which can be seen below:</p>
+
+            <img src="/img/Google_Authenticator.jpeg" alt="Google Authenticator One Time Code" style="float:center;width:50%;height:50%;">
+
+            <p>Successfully entering your password plus the one time code will result in something to the effect of the following:</p>
+
+            <img src="/img/NERSC_Login_Terminal.png" alt="NERSC Login BASH Splash Page" style="float:center;width:50%;height:50%;">
+
+            <p>Lorem</p>
+
+            <p>Lorem</p>
+
+            <p>What follows is a step by step guide for running a LAMMPS calculation on NERSC with a KIM potential, also available  <a href="/doc/Ar_KIM_lammps_v2.sh">here in .sh format</a>.</p>
+
+            <iframe src="/doc/Ar_KIM_lammps_v2.sh" width="100%" height="1250px"></iframe>
+
+          </div>
+        </section>
+
+        <footer>
+          <p>&copy; Copyright 2019 - Steven E. Bopp</p>
+        </footer>
+
+</body>
+</html>
