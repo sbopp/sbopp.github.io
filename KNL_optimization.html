@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Materials Science & Engineering">
+    <meta name="keywords" content="Materials Science & Engineering, Ultramaterials, Plasmonics">
+    <meta name="author" content="Steven Bopp">
+    <title>SBopp | Welcome</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+
+    <section id="showcase">
+      <div class="container">
+        <h1><a style="text-decoration:none" href="articles.html">A very quick guide to using Atomsk</a></h1>
+      </div>
+    </section>
+
+    <section id="showcase">
+      <div class="container">
+        <p>NERSC supplies several types of processors to users. Haswell nodes have a wall-hour to NERSC-hour multiplier of 140 and the KNL (Intel Knight's Landing) nodes have a wall-hour to NERSC-hour multiplier of 80. The factor of nearly 50% reduction in 'price' of calculations justifies the switch from the more commonly used Haswell nodes to the KNL nodes.</p>
+
+        <p>Upon attempting to switch my VASP calculations to KNL I would get complicated errors. NERSC has a SLURM script generator but it turns out that it's not very helpful for the KNL nodes (at least with Cray-complied VASP) on default because it tries to separate the number of processes per node and threads per process as even integer factors of the 272 threads that KNL nodes have. VASP seems like it doesn't play nicely with this and defaults its NPAR to 1 on the KNL nodes (at least in the Cray-compiled version) with SLURM inputs that don't have the number of processes per node being perfect squares (e.g. 64); the NERSC-supplied SLURM script generator will issue an error if you are trying to divide the cores this way and prefers even factors of 272 e.g., 136, 68, 34. VASP can't handle apparently when you try to give NPAR = int(sqrt(136, 68, 34,...)) and will default to 1 instead of the nearest integer square root because of some MPI tiling issue. That causes a lot of instability in the calculations sometimes and leads to warnings like Sub-Space-Matrix is not hermitian and BRMIX: very serious problems, the old and the new charge density differ which appear to be from a small system where n_bands/n_cores <5. </p>
+
+        <p>I find that (at least on a single KNL node) setting Processes_Per_Node="64" ;Threads_Per_Process="4"  gives excellent results and does not cause any VASP problems. I've attached a benchmarking table with some values that I tested for a single spin-polarized VASP calculation of an O2 dimer approaching a (100)-oriented TiN slab.</p>
+
+        <table><thead><tr><th>K-Grid</th><th>KNL Nodes</th><th>Processes Per Node</th><th>Threads Per Process</th><th>E0</th><th>Queue</th><th>Wall Time</th><th>NERSC Hours</th><th>VASP NPAR</th></tr></thead><tbody><tr><td>11x11x11</td><td>1</td><td>272</td><td>1</td><td>-0.715432715318E+02</td><td>Regular</td><td>129 min</td><td>175.737</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x4</td><td>1</td><td>272</td><td>1</td><td>-0.715433213714E+02</td><td>Regular</td><td>40 min</td><td>54.4921</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>272</td><td>1</td><td>-0.715431394152E+02</td><td>Regular</td><td>22 min</td><td>29.9707</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>136</td><td>2</td><td>-0.715431394152E+02</td><td>Regular</td><td>22 min</td><td>29.9707</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>68</td><td>4</td><td>-0.715431394152E+02</td><td>Regular</td><td>22 min</td><td>29.9707</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>68</td><td>4</td><td>-0.715431394152E+02</td><td>Low</td><td>22 min</td><td>14.84</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>34</td><td>8</td><td>-0.715431267488E+02</td><td>Low</td><td>3 min</td><td>2</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x4</td><td>1</td><td>34</td><td>8</td><td>-0.715433104709E+02</td><td>Low</td><td>5 min 20 sec</td><td>3.55</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x11</td><td>1</td><td>34</td><td>8</td><td>-0.715432602577E+02</td><td>Low</td><td>15 min 30 sec</td><td>10.33</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x11</td><td>1</td><td>68</td><td>4</td><td>-0.715432601590E+02</td><td>Low</td><td>16 min 12 sec</td><td>10.8</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>34</td><td>8</td><td>-0.715431267488E+02</td><td>Flex</td><td>2 min 59 sec</td><td>1</td><td>Defaulted to 1, could not tile processes</td></tr><tr><td>11x11x1</td><td>1</td><td>64</td><td>4</td><td>-0.715431503232E+02</td><td>Debug</td><td>1 min 58 sec</td><td>2.1</td><td>8</td></tr><tr><td>11x11x1</td><td>1</td><td>121</td><td>2</td><td>-0.715431250355E+02</td><td>Debug</td><td>3 min</td><td>4</td><td>11</td></tr></tbody></table>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Copyright 2019 - Steven E. Bopp</p>
+    </footer>
+
+</body>
+</html>
