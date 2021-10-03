@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Materials Science & Engineering">
+    <meta name="keywords" content="Materials Science & Engineering, Ultramaterials, Plasmonics">
+    <meta name="author" content="Steven Bopp">
+    <title>SBopp | Welcome</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+
+    <section id="showcase">
+      <div class="container">
+        <h1><a style="text-decoration:none" href="articles.html">Design and Construction of a Van der Waals Assembler</a></h1>
+      </div>
+    </section>
+
+    <section id="showcase">
+      <div class="container">
+        <p>Van der Waals (VdW) transfer and assembly have led to many exciting innovations in the ways that nanostructures can be fabricated and the properties that they can have. In his 2016 thesis entitled 'Ballistic Conduction in Graphene Heterostructures’, M. Lee shows some of his VdW materials assembly station but I think that his plans are not complete as presented in the text and, on my own journey to create a similar system for my own research, I have assembled a set of plans and photographs about my construction of a VdW materials assembly station. Some of the components were sourced from my group's laboratory since we had them lying around, however many were purchased new. Every attempt has been made to replicate the list of components and give a reasonable estimate of pricing for the items used in the VdW station. </p>
+
+        <p>The system is designed to have several degrees of freedom and also accommodate a reflection-mode microscope and be in as compact of a form factor as is feasible. To eliminate redundant degrees of freedom, in my system I only include one xy translation stage and a separate z translation stage which are mounted together with a goniometer that has a magnetic clamp which holds glass slides securely. A simplified diagram of the system (from the M. Lee method) is attached below. </p>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/System_Diagram.png" width="75%">
+                <h1>Simplified diagram of the system requirements based on M. Lee's method </h1>
+          </div>
+        </section>
+
+        <p>The overall idea behind the VdW assembly station is to have a system with x, y, and z translational control, and three degrees of rotational control as well: two on a goniometer, and one on a rotation stage attached to the translation stage. Additionally, it is desirable to have a temperature-controlled sample stage which does not leak too much heat, and (for the sake of convenience) a quick-change sample holder which I chose to be based on 1 inch by 3 inch glass slides for their ubiquitous availability. Attached below is a quick bill of materials for the system, the overall price of which I estimate at about $2800 USD depending on what components and tools you may have already available. </p>
+
+        <table style="margin-left:auto;margin-right:auto;"><thead><tr><th>Component</th><th>Price Per Item (USD)</th></tr></thead><tbody><tr><td>Thor Labs MB4 </td><td>$44.13</td></tr><tr><td>Thor Labs MSB23 </td><td>$25.75</td></tr><tr><td>Thor Labs BA2S6 (2x) </td><td>$29.76</td></tr><tr><td>Thor Labs T12XY</td><td>$585.42</td></tr><tr><td>Thor Labs GN2 </td><td>$313.61</td></tr><tr><td>Thor Labs MVS005 </td><td>$690.39</td></tr><tr><td>Thor Labs T12A2 </td><td>$22.07</td></tr><tr><td>Poly(propylene carbonate): 25 g</td><td>$79.50</td></tr><tr><td>K-type thermocouple (Omega WTK-8-24)</td><td>$12.49</td></tr><tr><td>Omega CNi823-C24 temperature controller</td><td>$465.00</td></tr><tr><td>Tempco HDC00001 – Cartridge Heater</td><td>$28.20</td></tr><tr><td>MA822 TC Plan Achro. 20X obj. ∞/ 1.0, N/A. 0.40, F.L. 10.0, W.D. 7.0 </td><td>$375.00</td></tr><tr><td>Vacuum Chuck (price for 2 to be custom machined)</td><td>$133</td></tr><tr><td>Misc. McMaster Hardware</td><td>$96.54</td></tr></tbody></table>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/McMaster_VdW.png" width="75%">
+                <h1>Bill of materials from McMaster Carr for the VdW system assembly </h1>
+          </div>
+        </section>
+
+        <p>The VdW system is built around a 3D machined chuck that is designed to allow a vacuum to hold down the chip that the VdW heterostructure will be assembled onto, as well as have room for a cartridge heater port and a k-type thermocouple in the form of a washer that can mount to the chuck. I find that aluminum is a good material for the construction of the chuck due to its high thermal conductivity, low expense, and ease of machining. Standard swagelok fittings are used in the construction of the vacuum pass-through, and teflon washers and bolts are used to attach the chuck loosely to a Thor Labs optical breadboard so as to mitigate the amount of heat loss from the chuck to the remainder of the system. Plans and renderings of the chuck are included below, as well as a finite elements thermal analysis for the heating power that our cartridge heater can supply in order to determine maximum strains that we can expect when operating the chuck at the highest temperatures we might want to use. For ease of use, I am including the <a href="/doc/VdW_Chuck.step">3D STEP</a> and also <a href="/doc/VdW_Chuck.FCStd">FreeCad</a> plans. </p>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/Chuck_Plans.png" width="75%">
+                <h1>Technical drawing of the machining that needs to be done to create the VdW system vacuum chuck </h1>
+          </div>
+        </section>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/Chuck.png" width="75%">
+                <h1>A 3D model of the heated vacuum chuck with a sapphire chip placed on the top vacuum port </h1>
+          </div>
+        </section>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/Chuck_Thermo.png" width="75%">
+                <h1>Finite elements analysis of the chuck showing maximum Z-deformation, computed with FreeCad </h1>
+          </div>
+        </section>
+
+        <p>A 3D model rendering of the full VdW system based on my own plans (with some elements adapted from the M. Lee method) is included below, as well as an idea of how the system may ideally be mounted inside of a lab-made reflection-mode confocal microscope to create a modular system based on optical breadboard components. </p>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/Full_Assembly.png" width="75%">
+                <h1>Full assembly of optomechanical components used in the VdW system (designed and rendered in FreeCad) </h1>
+          </div>
+        </section>
+
+        <section id="vis">
+          <div class="container">
+                <img src="./img/VdW_Station_and_Microscope.png" width="75%">
+                <h1>The full VdW assembly of optomechanical components could easily be included in a microscope setup for rapid transfer of stamps and quick positioning of the stages within the microscope system </h1>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Copyright 2019-2021 - Steven E. Bopp</p>
+    </footer>
+
+</body>
+</html>
