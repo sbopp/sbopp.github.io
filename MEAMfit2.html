@@ -13,7 +13,7 @@
 
         <section id="showcase">
           <div class="container">
-            <h1><a style="text-decoration:none" href="articles.html">Design of a small, modular clean room</a></h1>
+            <h1><a style="text-decoration:none" href="articles.html">A Quick Guide to Some Features of MEAMfit2</a></h1>
           </div>
         </section>
 
@@ -27,7 +27,7 @@
 
             <p>For the reader's reference, I am including here some notes on this histogram of interatomic separations that MEAMfit2 will generate. The file will be of plain text data in columns, the first being a distance unit and the second to the last being interactions. These interactions are split into series based on type. For example, if you had 2 species (A, and B) then there would be three columns following the first being the interaction of A with A, then the interaction of A with B, and finally the interaction of B with B. For the case of this tutorial, I ran calculations for Al, O, Ti, and N so my histogram of interatomic separations had 11 columns </p>
 
-            <p>I have included below a plot of interatomic separations in the systems that I calculated for Al, O, Ti, and N. The specific frequeuncy of occurance is slightly misleadning because there are in some casese more interactions of some species with others just based on the configurations that I calculated. All that you need to consider is that each of the bins represents an order of nearest neighbor interactions in your system. What you need to decide is where there is a good cutoff point of diminishing returns for distance that you are calculating vs. accuracy you care about.</p>
+            <p>I have included below a plot of interatomic separations in the systems that I calculated for Al, O, Ti, and N. The specific frequency of occurrence is slightly misleading because there are in some cases more interactions of some species with others just based on the configurations that I calculated. All that you need to consider is that each of the bins represents an order of nearest neighbor interactions in your system. What you need to decide is where there is a good cutoff point of diminishing returns for distance that you are calculating vs. accuracy you care about.</p>
 
             <img src="./img/sepnHistogram2.png" alt="Gnuplot-generated Data Histogram" style="float:center;width:50%;height:50%;">
 
@@ -35,7 +35,7 @@
 
             <iframe src="./doc/MEAMfit2_gnuplot_sepns.txt" width="55%" height="600px"></iframe>
 
-            <p>If you are finding that your program is quitting eariluer than you might expect, examine the logs. If you find that there is an issue saying somehting like '...there is no interatomic separation information for species 2 and 4' then you might have neglected to include vasprun.xml files for the inteactions of some of the species in your range of elements that you are including. For example, if you are trying to make a MEAM file for Al, O, Ti, and N, you need inteaction information for all of the possible first order interactions e.g., Al-Al, Al-O, Al-Ti, Al-N, O-O, O-Ti, O-N, Ti-Ti, Ti-N, N-N. This means that you should include calculations for things like molecules as well as crystals. </p>
+            <p>If you are finding that your program is quitting earlier than you might expect, examine the logs. If you find that there is an issue saying something like '...there is no interatomic separation information for species 2 and 4' then you might have neglected to include vasprun.xml files for the interactions of some of the species in your range of elements that you are including. For example, if you are trying to make a MEAM file for Al, O, Ti, and N, you need interaction information for all of the possible first order interactions e.g., Al-Al, Al-O, Al-Ti, Al-N, O-O, O-Ti, O-N, Ti-Ti, Ti-N, N-N. This means that you should include calculations for things like molecules as well as crystals. </p>
 
           </div>
         </section>
