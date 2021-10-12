@@ -1,0 +1,22 @@
+# Gnuplot script for plotting the nearest-neighbor histogram output of MEAMfit
+gnuplot
+set terminal svg enhanced size 1929,1080 font 'Verdana,32'
+set style data histograms
+set style histogram rowstacked
+set xtics rotate by 45 right
+#set xtics font ",24"
+set xtics autofreq 0.01
+set key left; set key font ",32"
+set xlabel 'Atomic separation (Å)'; set ylabel 'Frequency'; set title 'Histogram of interatomic separations for the TiN/Al203 system'
+set out 'sepnHistogram.svg'
+# Thanks to Christoph from StackOverflow for the xtic(...) example c. 2016
+p 'sepnHistogram.out' u 2:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'Al-Al' lw 2 lc rgb '#8F00E5' , \
+                   '' u 3:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'Al-O'  lw 2 lc rgb '#D800E0' , \
+                   '' u 4:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'Al-Ti' lw 2 lc rgb '#DC009B' , \
+                   '' u 5:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'Al-N'  lw 2 lc rgb '#D8004F' , \
+                   '' u 6:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'O-O'   lw 2 lc rgb '#D40007' , \
+                   '' u 7:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'O-Ti'  lw 2 lc rgb '#CF3D00' , \
+                   '' u 8:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'O-N'   lw 2 lc rgb '#CB8000' , \
+                   '' u 9:xtic(int($0)%10 == 0 ? stringcolumn(1) : '')  t 'Ti-Ti' lw 2 lc rgb '#C7C000 ', \
+                   '' u 10:xtic(int($0)%10 == 0 ? stringcolumn(1) : '') t 'Ti-N'  lw 2 lc rgb '#88C300' , \
+                   '' u 11:xtic(int($0)%10 == 0 ? stringcolumn(1) : '') t 'N-N'   lw 2 lc rgb '#46BF00'; q
