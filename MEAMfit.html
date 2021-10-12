@@ -37,11 +37,13 @@
 
             <p>If you are finding that your program is quitting earlier than you might expect, examine the logs. If you find that there is an issue saying something like '...there is no interatomic separation information for species 2 and 4' then you might have neglected to include vasprun.xml files for the interactions of some of the species in your range of elements that you are including. For example, if you are trying to make a MEAM file for Al, O, Ti, and N, you need interaction information for all of the possible first order interactions e.g., Al-Al, Al-O, Al-Ti, Al-N, O-O, O-Ti, O-N, Ti-Ti, Ti-N, N-N. This means that you should include calculations for things like molecules as well as crystals. </p>
 
+            <p>Setting the CONT=T option (to continue a calculation) will fail with the following error in the case that you do not have a fully-populated potparas_best file: ERROR: You do not yet have a full set of potparas_best files, stopping.</p>
+
           </div>
         </section>
 
         <footer>
-          <p>&copy; Copyright 2019 - Steven E. Bopp</p>
+          <p>&copy; Copyright 2019-2021 - Steven E. Bopp</p>
         </footer>
 
 </body>
