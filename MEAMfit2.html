@@ -33,7 +33,7 @@
 
             <p>Generating a historgram like this with Gnuplot turns out to be a bit of a trick because it, by default, will want to make a huge number of labels on the x-axis. I am including the code to reproduce a similar plot (you will need to supply the interatomic separations file from MEAMfit2) with Gnuplot to save you some hassle.</p>
 
-            <iframe src="./doc/MEAMfit2_gnuplot_sepns.txt" width="55%" height="600px"></iframe>
+            <iframe src="./doc/MEAMfit2_gnuplot_sepns.txt" width="75%" height="600px"></iframe>
 
             <p>If you are finding that your program is quitting earlier than you might expect, examine the logs. If you find that there is an issue saying something like '...there is no interatomic separation information for species 2 and 4' then you might have neglected to include vasprun.xml files for the interactions of some of the species in your range of elements that you are including. For example, if you are trying to make a MEAM file for Al, O, Ti, and N, you need interaction information for all of the possible first order interactions e.g., Al-Al, Al-O, Al-Ti, Al-N, O-O, O-Ti, O-N, Ti-Ti, Ti-N, N-N. This means that you should include calculations for things like molecules as well as crystals. </p>
 
